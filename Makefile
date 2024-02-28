@@ -71,6 +71,7 @@ OBJ = obj
 HEADERS = $(addprefix $(INC)/, minishell.h)
 
 # files path #
+LEXER = $(SRC)/lexer
 ENTRANCE = $(SRC)/entrance
 GRAMMAR = $(SRC)/grammar
 TOKENIZER = $(SRC)/tokenizer
@@ -104,6 +105,7 @@ MAIN_SRC = ./src/main.c
 # files mandatory #
 CFILES += $(addprefix $(BUILTINS)/, pwd.c)
 CFILES += $(addprefix $(SIGNALS)/, signal.c)
+CFILES += $(addprefix $(LEXER)/, lexer.c)
 # CFILES = $(addprefix $(ENTRANCE)/, environ.c)
 # CFILES += $(addprefix $(GRAMMAR)/, grammar_checker.c rules.c meta_checker.c)
 # CFILES += $(addprefix $(TOKENIZER)/, add_tokens.c memory_handler.c parenthesis_validation.c quotes_validation.c tokenizer.c trim_edges.c)

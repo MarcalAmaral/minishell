@@ -35,6 +35,7 @@ void get_input(void)
 		if (input == NULL)
 			break ;
 		printf("%s\n", input);
+		lexer("Feijao doce com mochi");
 		free(input);
 		// parser_input(input);
 	}

@@ -58,6 +58,9 @@ void    pwd(void);
 // Handle signal
 void	handle_signal(void);
 
+// Lexer
+void    lexer(char *input);
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
