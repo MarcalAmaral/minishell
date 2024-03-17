@@ -84,6 +84,8 @@ BUILTINS = $(SRC)/builtins
 SIGNALS = $(SRC)/signal
 HEREDOC = $(SRC)/heredoc
 REDIR = $(SRC)/redirection
+AUXILIARY = $(SRC)/auxiliary
+DLIST_PROCEDURES = $(SRC)/dlist_procedures
 
 # libs #
 INCLUDES = -I$(INC)/ -Ilib/libft/inc/
@@ -106,6 +108,8 @@ MAIN_SRC = ./src/main.c
 CFILES += $(addprefix $(BUILTINS)/, pwd.c)
 CFILES += $(addprefix $(SIGNALS)/, signal.c)
 CFILES += $(addprefix $(LEXER)/, lexer.c)
+CFILES += $(addprefix $(AUXILIARY)/, ft_free_matrix.c ft_matrix_lenght.c ft_print_matrix.c ft_print_dlist.c)
+CFILES += $(addprefix $(DLIST_PROCEDURES)/, ft_append_dlist.c ft_dlstlast.c ft_free_dlist.c ft_newnode_dlist.c)
 # CFILES = $(addprefix $(ENTRANCE)/, environ.c)
 # CFILES += $(addprefix $(GRAMMAR)/, grammar_checker.c rules.c meta_checker.c)
 # CFILES += $(addprefix $(TOKENIZER)/, add_tokens.c memory_handler.c parenthesis_validation.c quotes_validation.c tokenizer.c trim_edges.c)

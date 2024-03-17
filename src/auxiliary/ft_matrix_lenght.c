@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstlast.c                                      :+:      :+:    :+:   */
+/*   ft_matrix_lenght.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myokogaw <myokogaw@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 18:06:39 by myokogaw          #+#    #+#             */
-/*   Updated: 2024/02/23 18:06:39 by myokogaw         ###   ########.fr       */
+/*   Created: 2024/03/06 02:23:40 by myokogaw          #+#    #+#             */
+/*   Updated: 2024/03/06 02:23:40 by myokogaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-t_dlist	*ft_dlstlast(t_dlist *init)
+int	ft_matrix_lenght(void **matrix)
 {
-	t_dlist *temp;
+	int i;
 
-	if (!init->next)
-		return (init);
-	temp = init;
-	while (temp)
-	{
-		if (temp->next == NULL)
-			break ;
-		temp = temp->next;
-	}
-	return (temp);
+	i = 0;
+	while (matrix[i])
+		i++;
+	return (i);
 }

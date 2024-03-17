@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstlast.c                                      :+:      :+:    :+:   */
+/*   executor.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myokogaw <myokogaw@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 18:06:39 by myokogaw          #+#    #+#             */
-/*   Updated: 2024/02/23 18:06:39 by myokogaw         ###   ########.fr       */
+/*   Created: 2024/03/06 02:47:39 by myokogaw          #+#    #+#             */
+/*   Updated: 2024/03/06 02:47:39 by myokogaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-t_dlist	*ft_dlstlast(t_dlist *init)
+void    executor(char **args)
 {
-	t_dlist *temp;
 
-	if (!init->next)
-		return (init);
-	temp = init;
-	while (temp)
+}
+
+
+int	execute(char *path, char **cmds, char **envp)
+{
+	if (execve(path, cmds, envp) == -1)
 	{
-		if (temp->next == NULL)
-			break ;
-		temp = temp->next;
+		free(path);
+		ft_free_matrix((void **) cmds);
+		perror("Error\n- Execve: ");
+		return (1);
 	}
-	return (temp);
+	else
+		return (0);
 }

@@ -12,68 +12,80 @@
 
 #include "minishell.h"
 
-void	ft_printf_matrix(char **matrix);
-void	ft_free_matrix(char **matrix);
 char	**classifying_tokens(char **tokens);
+
+// Remove all whitespaces (any character which separes words) 
+// metacharacter: A character that, when unquoted, separates words. A metacharacter is a space, tab, newline, or one of the following characters: ‘|’, ‘&’, ‘;’, ‘(’, ‘)’, ‘<’, or ‘>’.
+// operators:  It is a newline or one of the following: ‘||’, ‘&&’, ‘&’, ‘;’, ‘;;’, ‘;&’, ‘;;&’, ‘|’, ‘|&’, ‘(’, or ‘)’. And redirections;
+
+// First scan check if we have an unquoted single ou double quoted;
+// void	first_scan(char *input)
+// {
+// 	int i = 0;
+
+	
+// }
+
+void	word_separator(t_dlist **lexemes, char *input)
+{
+	int i, j;
+
+	i = 0;
+	j = 0;
+	while (input[i])
+	{
+		if (input[i] == ' ' || input[i] == '\t')
+		{
+			ft_append_dlist(lexemes, ft_newnode_dlist((void *) ft_substr(input, 0, i)));
+			while (input[i] == ' ' || input[i] == '\t')
+				i++;
+		}
+		if (input[i] == '\'')
+		{
+			i++;
+			j = i;
+			while (input[j] != '\'')
+				j++;
+			ft_append_dlist(lexemes, ft_newnode_dlist((void *) ft_substr(input, i, j - i)));
+		}
+		i++;
+	}
+	return ;
+}
 
 void    lexer(char *input)
 {
-	char **tokens;
-	char **classified_tokens;
+	// char	**tokens;
+	// char	**classified_tokens;
+	t_dlist *lexemes;
 
-	tokens = ft_split(input, ' ');
-	classified_tokens = classifying_tokens(tokens);
-	ft_printf_matrix(classified_tokens);
-	ft_free_matrix(tokens);
-	ft_free_matrix(classified_tokens);
+	lexemes = (t_dlist *) ft_calloc(1, sizeof(t_dlist));
+	word_separator(&lexemes, input);
+	ft_print_dlist(&lexemes);
+
+
+	// classified_tokens = classifying_tokens(tokens);
+	// ft_print_matrix((void **) tokens);
+	// ft_print_matrix((void **) classified_tokens);
+	// ft_free_matrix((void **) tokens);
+	// ft_free_matrix((void **) classified_tokens);
 }
 
-void	ft_free_matrix(char **matrix)
-{
-	int i = 0;
-
-	while (matrix[i])
-	{
-		free(matrix[i]);
-		i++;
-	}
-	free(matrix);
-	return ;
-}
-
-void	ft_printf_matrix(char **matrix)
-{
-	int i = 0;
-
-	while (matrix[i])
-	{
-		printf("%s	", matrix[i]);
-		i++;
-	}
-	printf("\n");
-	return ;
-}
-
-int		ft_matrix_lenght(char **matrix)
-{
-	int i = 0;
-
-	while (matrix[i])
-		i++;
-	return (i);
-}
+// First step, separeted all lexemes;
 
 char	**classifying_tokens(char **tokens)
 {
-	int i = 0;
-	char **types_tokens = (char **) ft_calloc(ft_matrix_lenght(tokens) + 1, sizeof(char *));
+	int		i;
+	char	**types_tokens;
 
+	types_tokens = (char **) ft_calloc(ft_matrix_lenght((void **) tokens) + 1, sizeof(char *));
+	i = 0;
 	while (tokens[i])
 	{
 		if (tokens[i][0] == '-')
 			types_tokens[i] = ft_strdup("OPTION");
 		else
-			types_tokens[i] = ft_strdup("WORD");
+			types_tokens[i] = ft_strdup("LEXEMES");
 		i++;
 	}
 	return (types_tokens);

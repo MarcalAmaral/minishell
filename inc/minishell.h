@@ -23,12 +23,13 @@ extern "C" {
 # include <stdlib.h>
 # include <unistd.h>
 # include <signal.h>
+# include <fcntl.h>
 # include "libft.h"
 
 typedef struct s_dlist {
-    void *content;
-    struct s_dlist *next;
-    struct s_dlist *prev;
+    void 			*content;
+    struct s_dlist	*next;
+    struct s_dlist	*prev;
 }   t_dlist;
 
 enum	e_token
@@ -51,6 +52,18 @@ enum	e_token
 	EXEC
 };
 
+
+// Auxiliary functions
+void	ft_free_matrix(void **matrix);
+void	ft_print_matrix(void **matrix);
+void    ft_print_dlist(t_dlist **head);
+int		ft_matrix_lenght(void **matrix);
+
+// dlist procedures
+void	ft_free_dlist(t_dlist **head);
+void	ft_append_dlist(t_dlist **head, t_dlist *new_node);
+t_dlist	*ft_dlstlast(t_dlist *init);
+t_dlist	*ft_newnode_dlist(void *content);
 
 // Builtins
 void    pwd(void);

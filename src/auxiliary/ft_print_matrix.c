@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstlast.c                                      :+:      :+:    :+:   */
+/*   ft_print_matrix.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: myokogaw <myokogaw@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 18:06:39 by myokogaw          #+#    #+#             */
-/*   Updated: 2024/02/23 18:06:39 by myokogaw         ###   ########.fr       */
+/*   Created: 2024/03/06 02:22:58 by myokogaw          #+#    #+#             */
+/*   Updated: 2024/03/06 02:22:58 by myokogaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-t_dlist	*ft_dlstlast(t_dlist *init)
+void	ft_print_matrix(void **matrix)
 {
-	t_dlist *temp;
+	int i;
 
-	if (!init->next)
-		return (init);
-	temp = init;
-	while (temp)
+	i = 0;
+	while (matrix[i])
 	{
-		if (temp->next == NULL)
-			break ;
-		temp = temp->next;
+		printf("%s\n", (char *) matrix[i]);
+		i++;
 	}
-	return (temp);
+	printf("\n");
+	return ;
 }
