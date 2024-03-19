@@ -26,12 +26,6 @@ extern "C" {
 # include <fcntl.h>
 # include "libft.h"
 
-typedef struct s_dlist {
-    void 			*content;
-    struct s_dlist	*next;
-    struct s_dlist	*prev;
-}   t_dlist;
-
 enum	e_token
 {
 	ARGUMENT = 1,
@@ -52,6 +46,12 @@ enum	e_token
 	EXEC
 };
 
+typedef struct s_dlist {
+    void 			*content;
+	enum			e_token token;
+    struct s_dlist	*next;
+    struct s_dlist	*prev;
+}   t_dlist;
 
 // Auxiliary functions
 void	ft_free_matrix(void **matrix);
