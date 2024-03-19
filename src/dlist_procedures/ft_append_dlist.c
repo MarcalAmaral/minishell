@@ -12,19 +12,19 @@
 
 #include "minishell.h"
 
-void    ft_append_dlist(t_dlist **head, t_dlist *new_node)
+void	ft_append_dlist(t_dlist **head, t_dlist *new_node)
 {
-    t_dlist *node;
+	t_dlist	*node;
 
-    if (!new_node)
-        return ;
-    if (!*head)
-    {
-        *head = new_node;
-        return ;
-    }
-    node = ft_dlstlast(*head);
-    node->next = new_node;
-    new_node->prev = node;
-    return ;
+	if (!new_node)
+		return ;
+	if (!*head)
+	{
+		*head = new_node;
+		return ;
+	}
+	node = ft_dlstlast(*head);
+	node->next = new_node;
+	new_node->prev = node;
+	return ;
 }

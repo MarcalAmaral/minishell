@@ -12,19 +12,21 @@
 
 #include "minishell.h"
 
-void    ft_print_dlist(t_dlist **head)
+void	ft_print_dlist(t_dlist **head)
 {
-    t_dlist *node;
+	t_dlist	*node;
 
-    if (!*head)
-        return ;
-    node = *head;
-    while (node)
-    {
-        printf("%s\n", (char *) node->content);
-        if (node->next == NULL)
-            break ;
-        node = node->next;
-    }
-    return ;
+	if (head == NULL)
+		return ;
+	if (!*head)
+		return ;
+	node = *head;
+	while (node)
+	{
+		printf("%s\n", (char *) node->content);
+		if (node->next == NULL)
+			break ;
+		node = node->next;
+	}
+	return ;
 }

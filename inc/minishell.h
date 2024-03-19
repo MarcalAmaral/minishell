@@ -13,7 +13,7 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-#ifdef __cplusplus
+#ifdef __cplusplusbash
 extern "C" {
 #endif
 
@@ -28,27 +28,11 @@ extern "C" {
 
 enum	e_token
 {
-	ARGUMENT = 1,
-	PIPE,
-	DOLLAR,
-	AND,
-	OR,
-	L_PAREN,
-	R_PAREN,
-	QUOTE,
-	DOUBLE_QUOTE,
-	L_REDIR,
-	HEREDOC,
-	R_REDIR,
-	APPEND,
-	TOKEN_NULL,
-	BLOCK,
-	EXEC
+	WORD
 };
 
 typedef struct s_dlist {
     void 			*content;
-	enum			e_token token;
     struct s_dlist	*next;
     struct s_dlist	*prev;
 }   t_dlist;
@@ -58,10 +42,12 @@ void	ft_free_matrix(void **matrix);
 void	ft_print_matrix(void **matrix);
 void    ft_print_dlist(t_dlist **head);
 int		ft_matrix_lenght(void **matrix);
+void    ft_destructor_struct(t_dlist **struct_to_clean);
 
 // dlist procedures
 void	ft_free_dlist(t_dlist **head);
 void	ft_append_dlist(t_dlist **head, t_dlist *new_node);
+void    ft_free_dlist(t_dlist **head);
 t_dlist	*ft_dlstlast(t_dlist *init);
 t_dlist	*ft_newnode_dlist(void *content);
 

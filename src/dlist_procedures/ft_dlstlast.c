@@ -14,7 +14,7 @@
 
 t_dlist	*ft_dlstlast(t_dlist *init)
 {
-	t_dlist *temp;
+	t_dlist	*temp;
 
 	if (!init->next)
 		return (init);

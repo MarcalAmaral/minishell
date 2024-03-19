@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myokogaw <myokogaw@student.42.fr>          +#+  +:+       +#+        */
+/*   By: myokogaw <myokogaw@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 23:20:06 by myokogaw          #+#    #+#             */
-/*   Updated: 2023/10/10 21:02:26 by myokogaw         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:45:43 by myokogaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ char	*ft_strdup(const char *s)
 	char			*n_string;
 
 	i = -1;
-	lenght = ft_strlen(s);
+	if (s == NULL)
+		lenght = 0;
+	else
+		lenght = ft_strlen(s);
 	n_string = (char *) malloc(lenght * sizeof(char) + 1);
 	if (!n_string)
 		return (n_string);

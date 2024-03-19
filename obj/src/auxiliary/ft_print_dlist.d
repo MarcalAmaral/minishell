@@ -82,7 +82,11 @@ obj/src/auxiliary/ft_print_dlist.o: src/auxiliary/ft_print_dlist.c \
  /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
- /usr/include/x86_64-linux-gnu/bits/signal_ext.h lib/libft/inc/libft.h
+ /usr/include/x86_64-linux-gnu/bits/signal_ext.h /usr/include/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+ /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h lib/libft/inc/libft.h
 /usr/include/stdc-predef.h:
 inc/minishell.h:
 /usr/include/stdio.h:
@@ -181,4 +185,9 @@ inc/minishell.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
 /usr/include/x86_64-linux-gnu/bits/sigthread.h:
 /usr/include/x86_64-linux-gnu/bits/signal_ext.h:
+/usr/include/fcntl.h:
+/usr/include/x86_64-linux-gnu/bits/fcntl.h:
+/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
+/usr/include/x86_64-linux-gnu/bits/stat.h:
+/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
 lib/libft/inc/libft.h:

@@ -14,7 +14,7 @@
 
 int	ft_matrix_lenght(void **matrix)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (matrix[i])

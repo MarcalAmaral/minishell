@@ -1,6 +1,5 @@
-obj/src/dlist_procedures/ft_newnode_dlist.o: \
- src/dlist_procedures/ft_newnode_dlist.c /usr/include/stdc-predef.h \
- inc/minishell.h /usr/include/stdio.h \
+obj/src/auxiliary/ft_matrix_lenght.o: src/auxiliary/ft_matrix_lenght.c \
+ /usr/include/stdc-predef.h inc/minishell.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \

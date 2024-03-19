@@ -14,7 +14,7 @@
 
 void	ft_print_matrix(void **matrix)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (matrix[i])

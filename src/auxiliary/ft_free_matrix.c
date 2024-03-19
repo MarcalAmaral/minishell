@@ -14,8 +14,9 @@
 
 void	ft_free_matrix(void **matrix)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (matrix[i])
 	{
 		free(matrix[i]);

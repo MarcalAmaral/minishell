@@ -1,5 +1,4 @@
-obj/src/dlist_procedures/ft_newnode_dlist.o: \
- src/dlist_procedures/ft_newnode_dlist.c /usr/include/stdc-predef.h \
+obj/src/builtins/pwd.o: src/builtins/pwd.c /usr/include/stdc-predef.h \
  inc/minishell.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
